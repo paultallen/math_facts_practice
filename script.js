@@ -13,6 +13,19 @@ function startQuiz(generateProblem) {
   const feedbackEl = document.getElementById('feedback');
   const scoreEl = document.getElementById('score');
   const nextButton = document.getElementById('next-button');
+  const signToggle = document.getElementById('sign-toggle');
+
+  if (signToggle) {
+    signToggle.addEventListener('click', function () {
+      if (input.disabled) return;
+      if (input.value.startsWith('-')) {
+        input.value = input.value.slice(1);
+      } else {
+        input.value = '-' + input.value;
+      }
+      input.focus();
+    });
+  }
 
   let correctCount = 0;
   let attemptCount = 0;

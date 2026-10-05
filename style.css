@@ -49,6 +49,11 @@ h1 {
   margin-bottom: 1rem;
 }
 
+#sign-toggle {
+  background: #888;
+  padding: 0.6rem 0.9rem;
+}
+
 #answer-input {
   font-size: 2rem;
   width: 6rem;
@@ -91,6 +96,8 @@ button:active {
 }
 
 #next-button {
+  display: block;
+  margin: 0 auto;
   background: #444;
 }
 
