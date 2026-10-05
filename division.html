@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Addition &amp; Subtraction Practice</title>
+  <title>Division Practice</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Addition &amp; Subtraction</h1>
+    <h1>Division</h1>
     <p class="score" id="score">Score: 0 / 0</p>
 
     <div class="problem" id="problem"></div>
 
     <form id="answer-form">
-      <button type="button" id="sign-toggle">&plusmn;</button>
       <input type="number" id="answer-input" inputmode="numeric" autocomplete="off">
       <button type="submit">Check</button>
     </form>
@@ -28,20 +27,14 @@
 
   <script src="script.js"></script>
   <script>
-    function generateAddSubProblem() {
-      const limit = 20;
-      let a, b, op, answer;
-      do {
-        a = randomInt(-limit, limit);
-        b = randomInt(-limit, limit);
-        op = Math.random() < 0.5 ? '+' : '-';
-        answer = op === '+' ? a + b : a - b;
-      } while (answer < -limit || answer > limit);
-
-      return { display: `${a} ${op} ${formatOperand(b)}`, answer };
+    function generateDivisionProblem() {
+      const a = randomInt(2, 12);
+      const b = randomInt(2, 12);
+      const product = a * b;
+      return { display: `${product} ÷ ${a}`, answer: b };
     }
 
-    startQuiz(generateAddSubProblem);
+    startQuiz(generateDivisionProblem);
   </script>
 </body>
 </html>
